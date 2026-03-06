@@ -36,14 +36,14 @@ public class FoodUtilsPlugin extends Plugin
 	protected void startUp() throws Exception
 	{
 		overlayManager.add(foodHealOverlay);
-		log.debug("Example started!");
+		log.debug("Food Utils Running");
 	}
 
 	@Override
 	protected void shutDown() throws Exception
 	{
 		overlayManager.remove(foodHealOverlay);
-		log.debug("Example stopped!");
+		log.debug("Food Utils Stopped");
 	}
 
 	@Provides

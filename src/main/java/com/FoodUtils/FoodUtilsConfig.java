@@ -36,7 +36,7 @@ public interface FoodUtilsConfig extends Config {
 		return HealDisplayMode.BOTH;
 	}
 	@ConfigItem(
-			position = 3,
+			position = 4,
 			keyName = "colorForWaste",
 			name = "Color for wasted healing",
 			description ="Color food red when it would waste healing"
@@ -46,7 +46,7 @@ public interface FoodUtilsConfig extends Config {
 		return true;
 	}
 	@ConfigItem(
-			position = 4,
+			position = 5,
 			keyName = "noHealColor",
 			name = "No-heal Color",
 			description = "Text color when you are at full HP (missing = 0)"
@@ -57,7 +57,7 @@ public interface FoodUtilsConfig extends Config {
 	}
 
 	@ConfigItem(
-			position = 5,
+			position = 6,
 			keyName = "wasteColor",
 			name = "Waste Color",
 			description = "Text color when eating would waste healing (missing < base)"
@@ -68,7 +68,7 @@ public interface FoodUtilsConfig extends Config {
 	}
 
 	@ConfigItem(
-			position = 6,
+			position = 7,
 			keyName = "fullValueColor",
 			name = "Full-value Color",
 			description = "Text color when you will get the full heal (missing >= base)"
@@ -76,5 +76,16 @@ public interface FoodUtilsConfig extends Config {
 	default java.awt.Color fullValueColor()
 	{
 		return java.awt.Color.WHITE;
+	}
+
+	@ConfigItem(
+			position = 3,
+			keyName ="Hover Toggle",
+			name = "Show only on hover",
+			description = " Display heal values on when hover an item"
+	)
+	default boolean onlyShowOnHover()
+	{
+		return false;
 	}
 }
