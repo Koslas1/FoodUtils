@@ -1,19 +1,54 @@
 package com.FoodUtils;
-
-import static com.FoodUtils.FoodData.addHeal;
-import static com.FoodUtils.FoodData.addPercentCeil;
-import static com.FoodUtils.FoodData.addBrewStyle;
-import static com.FoodUtils.FoodData.addAnglerfish;
+import com.FoodUtils.FoodHealRules.*;
 import net.runelite.api.gameval.ItemID;
 
-final class FoodRegistry
+import java.util.HashMap;
+import java.util.Map;
+
+public class FoodRuleData
 {
-    private FoodRegistry()
+    private final Map<Integer, HealRule> RULES = new HashMap<>();
+
+    public FoodRuleData()
     {
+        populateRuleMap();
+
 
     }
+    public HealRule getRuleForItemId(int itemId){
 
-    static void register()
+        return RULES.get(itemId);
+    }
+
+    private void addRule(HealRule rule, int... itemIds)
+    {
+        for (int id : itemIds)
+        {
+            RULES.put(id, rule);
+        }
+    }
+
+    private void addHeal(int itemHealAmount, int... itemIds)
+    {
+        addRule(new FixedItemHealRule(itemHealAmount), itemIds);
+    }
+
+    private void addPercentCeil(double pct, int flat, int... itemIds)
+    {
+        addRule(new PercentageItemHealRule(pct,flat), itemIds);
+    }
+
+    private void addBrewStyle(double pct, int flat, int... itemIds)
+    {
+        addRule(new BrewHealRule(pct,flat), itemIds);
+    }
+
+    private void addAnglerfish(int... itemIds)
+    {
+        addRule(new AnglerFishHealRule(), itemIds);
+    }
+
+    private void populateRuleMap()
     {
         //Fixed Heal
         addHeal(-5,
@@ -298,11 +333,12 @@ final class FoodRegistry
                 ItemID.STRAWBERRY);
 
         //Sarabrew style
+
         addBrewStyle(0.15, 2,
-                ItemID.BR_1DOSEPOTIONOFSARADOMIN,
-                ItemID.BR_2DOSEPOTIONOFSARADOMIN,
-                ItemID.BR_3DOSEPOTIONOFSARADOMIN,
-                ItemID.BR_4DOSEPOTIONOFSARADOMIN,
+                ItemID._1DOSEPOTIONOFSARADOMIN,
+                ItemID._2DOSEPOTIONOFSARADOMIN,
+                ItemID._3DOSEPOTIONOFSARADOMIN,
+                ItemID._4DOSEPOTIONOFSARADOMIN,
                 ItemID.TOA_SUPPLY_HEAL_1,
                 ItemID.TOA_SUPPLY_HEAL_2,
                 ItemID.TOA_SUPPLY_HEAL_3,

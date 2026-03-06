@@ -10,6 +10,7 @@ public class FoodHealOverlay extends WidgetItemOverlay{
 
     private final FoodUtilsConfig config;
     private final Client client;
+    private final FoodData foodData;
 
 
     @Inject
@@ -17,6 +18,7 @@ public class FoodHealOverlay extends WidgetItemOverlay{
     {
         this.config = config;
         this.client = client;
+        this.foodData = new FoodData();
         showOnInventory();
     }
 
@@ -36,7 +38,7 @@ public class FoodHealOverlay extends WidgetItemOverlay{
         int currentHP = client.getBoostedSkillLevel(Skill.HITPOINTS);
         int baseHP = client.getRealSkillLevel(Skill.HITPOINTS);
         //Null Error handling
-        FoodData.FoodInfo info = FoodData.calculate(itemId, baseHP, currentHP);
+        FoodData.FoodInfo info = foodData.calculate(itemId, baseHP, currentHP);
         if (info == null)
         {
             return;
