@@ -3,6 +3,7 @@ package com.FoodUtils;
 import net.runelite.client.config.Config;
 import net.runelite.client.config.ConfigGroup;
 import net.runelite.client.config.ConfigItem;
+import net.runelite.client.config.Range;
 
 @ConfigGroup("foodUtils")
 public interface FoodUtilsConfig extends Config {
@@ -16,7 +17,7 @@ public interface FoodUtilsConfig extends Config {
 		return TextPosition.BOTTOM_RIGHT;
 	}
 	@ConfigItem(
-			position = 2,
+			position = 4,
 			keyName = "shadow",
 			name = "Enable Shadow",
 			description = "Draw black shadow behind text"
@@ -36,7 +37,7 @@ public interface FoodUtilsConfig extends Config {
 		return HealDisplayMode.BOTH;
 	}
 	@ConfigItem(
-			position = 4,
+			position = 6,
 			keyName = "colorForWaste",
 			name = "Color for wasted healing",
 			description ="Color food red when it would waste healing"
@@ -46,7 +47,7 @@ public interface FoodUtilsConfig extends Config {
 		return true;
 	}
 	@ConfigItem(
-			position = 5,
+			position = 7,
 			keyName = "noHealColor",
 			name = "No-heal Color",
 			description = "Text color when you are at full HP (missing = 0)"
@@ -57,7 +58,7 @@ public interface FoodUtilsConfig extends Config {
 	}
 
 	@ConfigItem(
-			position = 6,
+			position = 8,
 			keyName = "wasteColor",
 			name = "Waste Color",
 			description = "Text color when eating would waste healing (missing < base)"
@@ -68,7 +69,7 @@ public interface FoodUtilsConfig extends Config {
 	}
 
 	@ConfigItem(
-			position = 7,
+			position = 9,
 			keyName = "fullValueColor",
 			name = "Full-value Color",
 			description = "Text color when you will get the full heal (missing >= base)"
@@ -79,7 +80,7 @@ public interface FoodUtilsConfig extends Config {
 	}
 
 	@ConfigItem(
-			position = 3,
+			position = 5,
 			keyName ="Hover Toggle",
 			name = "Show only on hover",
 			description = " Display heal values on when hover an item"
@@ -87,5 +88,41 @@ public interface FoodUtilsConfig extends Config {
 	default boolean onlyShowOnHover()
 	{
 		return false;
+	}
+
+	@ConfigItem(
+			position = 2,
+			keyName = "xOffset",
+			name = "X offset",
+			description = "Horizontal adjustment for heal text"
+	)
+	default int xOffset()
+	{
+		return 0;
+	}
+
+	@ConfigItem(
+			position = 3,
+			keyName = "yOffset",
+			name = "Y offset",
+			description = "Vertical adjustment for heal text"
+	)
+	default int yOffset()
+	{
+		return 0;
+	}
+
+	@Range(
+			min = 8,
+			max = 24
+	)
+	@ConfigItem(
+			keyName = "fontSize",
+			name = "Font size",
+			description = "Size of heal text"
+	)
+	default int fontSize()
+	{
+		return 14;
 	}
 }

@@ -73,6 +73,9 @@ public class FoodHealOverlay extends WidgetItemOverlay{
                 return;
             }
         }
+        Font oldFont = graphics.getFont();
+        Font customFont = oldFont.deriveFont((float) config.fontSize());
+        graphics.setFont(customFont);
         java.awt.FontMetrics fm = graphics.getFontMetrics();
 
         int x;
@@ -89,6 +92,16 @@ public class FoodHealOverlay extends WidgetItemOverlay{
                 y = bounds.y + 12;
                 break;
 
+            case MIDDLE_LEFT:
+                x = bounds.x + 2;
+                y = bounds.y + (bounds.height / 2) + (fm.getAscent() / 2) - 2;
+                break;
+
+            case MIDDLE_RIGHT:
+                x = bounds.x + bounds.width - fm.stringWidth(text) - 2;
+                y = bounds.y + (bounds.height / 2) + (fm.getAscent() / 2) - 2;
+                break;
+
             case BOTTOM_LEFT:
                 x = bounds.x + 2;
                 y = bounds.y + bounds.height - 2;
@@ -100,6 +113,9 @@ public class FoodHealOverlay extends WidgetItemOverlay{
                 y = bounds.y + bounds.height - 2;
                 break;
         }
+
+        x += config.xOffset();
+        y += config.yOffset();
         //Default text color
         java.awt.Color oldColor = graphics.getColor();
         java.awt.Color textColor = Color.WHITE;
@@ -128,6 +144,7 @@ public class FoodHealOverlay extends WidgetItemOverlay{
         graphics.setColor(textColor);
         graphics.drawString(text, x , y);
         //Reset old color just in case
+        graphics.setFont(oldFont);
         graphics.setColor(oldColor);
 
     }
