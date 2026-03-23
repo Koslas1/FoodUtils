@@ -108,7 +108,8 @@ public class FoodRuleData
                 ItemID.BRUTAL_RELICYMS_BALM1,
                 ItemID.BRUTAL_RELICYMS_BALM2,
                 ItemID.BRUTAL_1DOSEANTIPOISON,
-                ItemID.BRUTAL_2DOSEANTIPOISON);
+                ItemID.BRUTAL_2DOSEANTIPOISON,
+                ItemID.GARDEN_WHITE_TREE_FRUIT);
 
         addHeal(4,
                 ItemID.SARDINE,
@@ -151,6 +152,10 @@ public class FoodRuleData
                 ItemID.MACKEREL,
                 ItemID.MEAT_PIE,
                 ItemID.HALF_A_MEAT_PIE,
+                ItemID.GARDEN_PIE,
+                ItemID.HALF_GARDEN_PIE,
+                ItemID.FISH_PIE,
+                ItemID.HALF_FISH_PIE,
                 ItemID.RAIDS_BAT0_COOKED,
                 ItemID.SPIT_ROASTED_BIRD_MEAT,
                 ItemID.SQUARE_SANDWICH,
@@ -186,17 +191,24 @@ public class FoodRuleData
                 ItemID.HALF_PLAIN_PIZZA,
                 ItemID.APPLE_PIE,
                 ItemID.HALF_AN_APPLE_PIE,
+                ItemID.BOTANICAL_PIE,
+                ItemID.HALF_BOTANICAL_PIE,
                 ItemID.SPIT_ROASTED_RABBIT_MEAT,
                 ItemID.PREMADE_CHOCCHIP_CRUNCHIES,
                 ItemID.CHOCCHIP_CRUNCHIES,
                 ItemID.PREMADE_SPICY_CRUNCHIES,
-                ItemID.SPICY_CRUNCHIES);
+                ItemID.SPICY_CRUNCHIES,
+                ItemID.HALF_FULL_WINE_JUG);
 
         addHeal(8,
                 ItemID.PIKE,
                 ItemID.SPIT_ROASTED_BEAST_MEAT,
                 ItemID.MEAT_PIZZA,
                 ItemID.HALF_MEAT_PIZZA,
+                ItemID.MUSHROOM_PIE,
+                ItemID.HALF_MUSHROOM_PIE,
+                ItemID.ADMIRAL_PIE,
+                ItemID.HALF_ADMIRAL_PIE,
                 ItemID.PREMADE_WORM_CRUNCHIES,
                 ItemID.WORM_CRUNCHIES,
                 ItemID.PREMADE_TOAD_CRUNCHIES,
@@ -223,6 +235,8 @@ public class FoodRuleData
                 ItemID.COOKED_CHOMPY,
                 ItemID.PEST_FIELD_RATION,
                 ItemID.DRAGONFRUIT,
+                ItemID.DRAGONFRUIT_PIE,
+                ItemID.HALF_DRAGONFRUIT_PIE,
                 ItemID.DEADMAN_STARTER_TUNA /* Deadman Starter Pack */);
 
         addHeal(11,
@@ -230,6 +244,10 @@ public class FoodRuleData
                 ItemID.STEW,
                 ItemID.PINEAPPLE_PIZZA,
                 ItemID.HALF_PINEAPPLE_PIZZA,
+                ItemID.WILD_PIE,
+                ItemID.HALF_WILD_PIE,
+                ItemID.SUMMER_PIE,
+                ItemID.HALF_SUMMER_PIE,
                 ItemID.HUNDRED_PIRATE_FISHCAKE,
                 ItemID.PREMADE_VEGETABLE_BATTA,
                 ItemID.VEGETABLE_BATTA,
@@ -245,14 +263,16 @@ public class FoodRuleData
                 ItemID.RAIDS_BAT2_COOKED,
                 ItemID.LAVA_EEL,
                 ItemID.RAIDS_FISH2_COOKED,
-                ItemID.MM_BANANA_STEW);
+                ItemID.MM_BANANA_STEW,
+                ItemID.JUG_WINE);
 
         addHeal(12,
                 ItemID.LOBSTER,
                 ItemID.PREMADE_WORM_HOLE,
                 ItemID.WORM_HOLE,
                 ItemID.PREMADE_VEG_BALL,
-                ItemID.VEG_BALL);
+                ItemID.VEG_BALL,
+                ItemID.VILLAGE_RARE_TUBER);
 
         addHeal(13,
                 ItemID.BASS,
@@ -267,7 +287,9 @@ public class FoodRuleData
                 ItemID.EASTER_EGG,
                 ItemID.RAIDS_FISH3_COOKED,
                 ItemID.COOKED_OOMLIE,
-                ItemID.BLUE_CRAB_MEAT);
+                ItemID.BLUE_CRAB_MEAT,
+                ItemID.RAG_BOTTLE_WINE,
+                ItemID.FEVER_RUM);
 
         addHeal(15,
                 ItemID.PREMADE_TANGLED_TOADS_LEGS,
@@ -275,14 +297,23 @@ public class FoodRuleData
                 ItemID.PREMADE_CHOCOLATE_BOMB,
                 ItemID.CHOCOLATE_BOMB,
                 ItemID._100_JUBBLY_MEAT_COOKED,
-                ItemID.SWORDTIP_SQUID);
+                ItemID.SWORDTIP_SQUID,
+                ItemID.KEG_OF_BEER,
+                ItemID.BUTTERFLY_JAR_SNOWY);
 
         addHeal(16,
                 ItemID.MONKFISH,
                 ItemID.POTATO_CHEESE,
                 ItemID.POTATO_EGG_TOMATO,
                 ItemID.GAUNTLET_COMBO_FOOD,
-                ItemID.GAUNTLET_COMBO_FOOD_HM);
+                ItemID.GAUNTLET_COMBO_FOOD_HM,
+                ItemID.ECLIPSE_WINE,
+                ItemID.CHILHUAC_RED
+                ItemID.IXCOZTIC_WHITE,
+                ItemID.METZTONALLI_WHITE,
+                ItemID.TONAMEYO_WHITE,
+                ItemID.CHICHILIHUI_ROSE,
+                ItemID.IMPERIAL_ROSE);
 
         addHeal(17,
                 ItemID.RAIDS_FISH4_COOKED,
@@ -310,7 +341,9 @@ public class FoodRuleData
                 ItemID.BR_SHARK /* LMS */,
                 ItemID.GAUNTLET_FOOD,
                 ItemID.EVENT_CORRUPTED_SHARK,
-                ItemID.HALIBUT);
+                ItemID.HALIBUT,
+                ItemID.TOB_BANDAGES,
+                ItemID.TOA_HONEY_LOCUST);
 
         addHeal(21,
                 ItemID.SEATURTLE);
@@ -331,6 +364,10 @@ public class FoodRuleData
         //Percent Heal
         addPercentCeil(0.06, 0,
                 ItemID.STRAWBERRY);
+        addPercentCeil(0.1, 0,
+                ItemID.SWEETCORN_COOKED);
+        addPercentCeil(0.1, 0,
+                ItemID.BOWL_SWEETCORN);
 
         //Sarabrew style
 
